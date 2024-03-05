@@ -1,6 +1,9 @@
 import express from "express";
 import mongoose from "mongoose";
 import bodyParser from "body-parser";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 3002;
@@ -17,8 +20,7 @@ app.use(
   })
 );
 
-const mongoDB =
-  "mongodb+srv://nathanbdu50:gEG9Mo14jxTqai7Z@intro-express-mongo.mzcrcsz.mongodb.net/?retryWrites=true&w=majority&appName=Intro-express-mongo";
+const mongoDB = process.env.MONGO_URI;
 
 mongoose.connect(mongoDB, { useNewUrlParser: true });
 
