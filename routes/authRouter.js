@@ -1,7 +1,7 @@
 import express from "express";
 import User from "../models/user.js";
 import bcrypt from "bcryptjs";
-import { Jwt } from "jsonwebtoken";
+import jwt from "jsonwebtoken";
 const authRouter = express.Router();
 
 authRouter.post("/register", async (req, res) => {
